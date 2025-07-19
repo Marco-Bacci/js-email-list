@@ -8,16 +8,18 @@ const getEmailList = () => {
       .then((resp) => {
         const email = resp.data.response;
         emails.innerHTML += `<li>${email}</li>`;
+        
       });
-    }
-  };
+  }
+};
+
+getEmailList();
+
+// richiamo il refresh button dal dom
+const refresh = document.getElementById("refresh");
+
+refresh.addEventListener("click", () => {
+  emails.innerHTML = '';
+  getEmailList()
   
-  getEmailList();
-  
-  // richiamo il refresh button dal dom
-  const refresh = document.getElementById("refresh");
-  
-  refresh.addEventListener("click", () => {
-    emails.innerHTML = getEmailList();
-  });
-  
+});
