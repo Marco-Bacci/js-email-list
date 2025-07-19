@@ -8,7 +8,7 @@ const getEmailList = () => {
       .then((resp) => {
         const email = resp.data.response;
         
-        emails.innerHTML += `<li>${email}</li>`;
+        emails.innerHTML += `<li><strong>${email}</strong></li>`;
         
       });
   }
