@@ -7,6 +7,7 @@ const getEmailList = () => {
       .get(`https://flynn.boolean.careers/exercises/api/random/mail`)
       .then((resp) => {
         const email = resp.data.response;
+        
         emails.innerHTML += `<li>${email}</li>`;
         
       });
